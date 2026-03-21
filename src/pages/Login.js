@@ -26,7 +26,7 @@ const [loading, setLoading] = useState(false);
             if (data.role === 'admin') {
                 navigate('/admin');
             } else {
-                navigate('/user');
+                navigate('/dashboard');
             }
         } catch (err) {
             setError(err.response?.data?.message || 'Login failed');
@@ -38,21 +38,21 @@ const [loading, setLoading] = useState(false);
 
     return (
         <div className='login-container'>
-            <div className='login-cards'>
+            <div className='login-card'>
                 <h2 className='login-title'>HelpDesk Pro</h2>
                 <p className='login-subtitle'>Welcome back! Please login to your account.</p>
 
-                {error && <div className='error.message'>{error}</div>}
+                {error && <div className='error-message'>{error}</div>}
 
                 <form onSubmit={handleSubmit}>
-                    <div className='form-group'> 
+                    <div className='form-field'> 
                         <label className='form-label'>Email</label>
                         <input 
                         type='email'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className='form-input'
-                        placeHolder='Enter your email'
+                        placeholder='Enter your email'
                         required
                         />
                     </div>
@@ -64,12 +64,12 @@ const [loading, setLoading] = useState(false);
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         className='form-input'
-                        placeHolder='Enter your password'
+                        placeholder='Enter your password'
                         required
                         />
                     </div>
 
-                    <button type='submit' className='login-button' disabled={loading}>
+                    <button type='submit' className='submit-button' disabled={loading}>
                         {loading ? 'Signing in...' : 'Sign In'}
                     </button>
                 </form>

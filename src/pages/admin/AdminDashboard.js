@@ -29,7 +29,7 @@ function AdminDashboard() {
     }, [filter]);
 
     const formatDate = (dateString) => {
-        return new Date(dateString).toLocalDateString('en-US', {
+        return new Date(dateString).toLocaleDateString('en-US', {
             year: 'numeric', month: 'short', day: 'numeric'
         });
     };
