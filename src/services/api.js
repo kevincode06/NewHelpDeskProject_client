@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-    baseURL: 'http://localhost:5000/api',
+    baseURL: 'https://newhelpdeskproject-server.onrender.com/api',
 });
 
 // automatically attach token to every request
